@@ -3,9 +3,12 @@ import { ProductService } from '../../core/services/Product/product-service';
 import { IProduct } from '../../shared/iproduct';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ProductFilterPipe } from '../../shared/pipes/product-filter-pipe';
+import { ProductSortPipePipe } from '../../shared/pipes/product-sort-pipe-pipe';
+
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, FormsModule],
+  imports: [RouterLink, FormsModule,ProductFilterPipe, ProductSortPipePipe ],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
@@ -16,10 +19,6 @@ export class Home {
   searchTerm: string = '';
   sortOption: string = '';
   filteredProducts: IProduct[] = [];
-
-  constructor() {
-    // Constructor logic if needed
-  }
 
   ngOnInit(): void {
     this._productService.getProducts().subscribe({
