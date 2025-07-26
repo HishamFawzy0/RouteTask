@@ -1,59 +1,75 @@
-# RouteTask
+# 🛒 RouteTask - Angular 20 E-Commerce App with SSR
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+This project is a responsive and modern e-commerce web application built with **Angular 20**, using **Standalone Components**, **TailwindCSS**, and **Angular SSR** (Universal). It’s deployed on **Vercel** with full dark mode support and product browsing experience.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Features
 
-```bash
-ng serve
-```
+- 🏠 Home Page with product cards
+- 🔍 Search by product name (case-insensitive)
+- 🔃 Sorting:
+  - Price: Low → High / High → Low
+  - Name: A → Z / Z → A
+- 🌓 Dark Mode toggle
+- 🔗 Product Details page
+- ⚡ SSR (Server Side Rendering) with Angular Universal
+- 💅 Styled with TailwindCSS
+- 📦 Hosted on [Vercel](https://vercel.com)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 📂 Pages
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### ✅ Home (`/home`)
+- Fetches products from: `https://fakestoreapi.com/products`
+- Displays cards in a grid
+- Supports live filtering and sorting using custom pipes
+- Responsive and dark mode ready
 
-```bash
-ng generate component component-name
-```
+### ✅ Product Details (`/product-details/:id`)
+- Displays full product info
+- Rating stars
+- Add to Cart / Wishlist buttons
+- Styled and animated with Tailwind
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🛠️ Tech Stack
 
-## Building
+| Tech            | Description                       |
+|----------------|-----------------------------------|
+| Angular 20      | Frontend Framework (Standalone)  |
+| Angular Universal | SSR (Server Side Rendering)     |
+| TailwindCSS     | Utility-First Styling Framework  |
+| Vercel          | Hosting & Deployment              |
+| FakeStore API   | Product Data                      |
 
-To build the project run:
+---
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## ⚙️ Deployment on Vercel (https://route-task-theta.vercel.app/home)
 
-## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+## 📸 Screenshots
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
+ <img width="1895" height="905" alt="image" src="https://github.com/user-attachments/assets/e74ad22f-7b1a-450c-9681-7cce2b8f91ac" />
+<img width="1901" height="908" alt="image" src="https://github.com/user-attachments/assets/515d94dc-0262-43cc-85d5-635111cfc40a" />
+<img width="1898" height="899" alt="image" src="https://github.com/user-attachments/assets/49de5b7e-83e5-48a1-923e-a9b5b70f7ebc" />
 
-```bash
-ng e2e
-```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🤝 Author
+
+Developed by [@HishamFawzy0](https://github.com/HishamFawzy0)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
