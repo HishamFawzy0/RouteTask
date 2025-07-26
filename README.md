@@ -48,7 +48,7 @@ This project is a responsive and modern e-commerce web application built with **
 ---
 
 
-## ⚙️ Deployment on Vercel (https://route-task-gray.vercel.app/home)
+## ⚙️ Deployment on Vercel (https://route-task-theta.vercel.app/home)
 
 
 ---
