@@ -1,11 +1,43 @@
-import { Component } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, PLATFORM_ID, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './navbar.html',
-  styleUrl: './navbar.css'
+  styleUrl: './navbar.css',
 })
-export class Navbar {
+export class Navbar implements OnInit {
+  isDark = false;
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  toggleDarkMode() {
+    if (isPlatformBrowser(this.platformId)) {
+      const html = document.documentElement;
+
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        this.isDark = false;
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        this.isDark = true;
+      }
+    }
+  }
+
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') {
+        document.documentElement.classList.add('dark');
+        this.isDark = true;
+      } else {
+        this.isDark = false;
+      }
+    }
+  }
 }
