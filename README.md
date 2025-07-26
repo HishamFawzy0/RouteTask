@@ -55,7 +55,7 @@ This project is a responsive and modern e-commerce web application built with **
 
 ## 📸 Screenshots
 
-> Add screenshots of Home page and Product Details here
+
  <img width="1895" height="905" alt="image" src="https://github.com/user-attachments/assets/e74ad22f-7b1a-450c-9681-7cce2b8f91ac" />
 <img width="1901" height="908" alt="image" src="https://github.com/user-attachments/assets/515d94dc-0262-43cc-85d5-635111cfc40a" />
 <img width="1898" height="899" alt="image" src="https://github.com/user-attachments/assets/49de5b7e-83e5-48a1-923e-a9b5b70f7ebc" />
