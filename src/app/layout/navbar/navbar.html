@@ -1,5 +1,5 @@
 <nav
-    class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+    class="bg-white/90 transition-all duration-300 dark:bg-gray-900/90 backdrop-blur-sm shadow-md border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
     <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-3">
         <!-- Logo -->
         <a href="#" class="flex items-center space-x-3">
@@ -21,7 +21,7 @@
         <!-- Menu -->
         <div class="hidden w-full md:flex md:items-center md:w-auto" id="navbar-menu">
             <ul class="flex flex-col md:flex-row items-center gap-4 md:gap-6 mt-4 md:mt-0">
-                <li><a href="#"
+                <li><a routerLink="/home" routerLinkActive="text-blue-600 dark:text-blue-400" 
                         class="text-gray-800 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition font-medium">Home</a>
                 </li>
                 <!-- Dark mode toggle -->

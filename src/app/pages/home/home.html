@@ -1,9 +1,24 @@
-<div class="bg-white text-black dark:bg-gray-900 dark:text-white min-h-screen py-10">
+<div class="bg-white text-black dark:bg-gray-900 transition-all duration-300 dark:text-white min-h-screen py-10">
     <div class="max-w-7xl mx-auto px-4">
         <h1 class="text-3xl font-bold mb-6 text-center">Our Products</h1>
+<div class="flex flex-col md:flex-row transition-all duration-300  justify-between items-center mb-6 gap-4">
+    <!-- Search Bar -->
+    <input [(ngModel)]="searchTerm" (input)="applyFilters()"
+        class="w-full md:w-1/2 px-4 py-2 border rounded-md dark:bg-gray-800 dark:border-gray-600"
+        placeholder="Search by name..." />
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            @for (product of products; track product.id) {
+    <!-- Sort Dropdown -->
+    <select [(ngModel)]="sortOption" (change)="applyFilters()"
+        class="px-4 py-2 border rounded-md dark:bg-gray-800 dark:border-gray-600">
+        <option value="">Sort by...</option>
+        <option value="priceLowHigh">Price: Low to High</option>
+        <option value="priceHighLow">Price: High to Low</option>
+        <option value="nameAZ">Name: A → Z</option>
+    </select>
+</div> 
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 transition-all duration-300 lg:grid-cols-4 gap-6">
+            @for (product of filteredProducts; track product.id) {
             <div routerLink="/product-details/{{ product.id }}"  class="bg-white cursor-pointer dark:bg-gray-800 rounded-xl shadow hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
                 
                 <!-- Image -->
@@ -15,6 +30,13 @@
                     <!-- Title -->
                     <h2 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white line-clamp-2">{{ product.title
                         }}</h2>
+
+                <!-- Rateing -->
+                    <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                        Rating: ⭐ {{ product.rating.rate }} ({{ product.rating.count }} reviews)
+                    </div>
+
+
                     <!-- Price -->
                     <div class="mt-3 font-bold text-lg text-blue-600 dark:text-blue-400">
                         ${{ product.price }}
