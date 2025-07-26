@@ -8,11 +8,12 @@ import { ProductSortPipePipe } from '../../shared/pipes/product-sort-pipe-pipe';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, FormsModule,ProductFilterPipe, ProductSortPipePipe ],
+  imports: [RouterLink, FormsModule, ProductFilterPipe, ProductSortPipePipe],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home {
+  Math = Math;
   _productService: any = inject(ProductService);
   products: IProduct[] = [];
 

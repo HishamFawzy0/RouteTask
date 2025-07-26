@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { IProduct } from '../../shared/iproduct';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductService } from '../../core/services/Product/product-service';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-product-details',
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink],
   templateUrl: './product-details.html',
   styleUrl: './product-details.css',
 })
@@ -16,7 +16,8 @@ export class ProductDetails {
 
   product!: IProduct;
   isLoading = true;
-
+  Math = Math;
+ 
   ngOnInit() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.productService.getProductById(id).subscribe({
