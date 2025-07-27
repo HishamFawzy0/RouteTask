@@ -54,6 +54,8 @@ This project is a responsive and modern e-commerce web application built with **
 | TailwindCSS     | Utility-First Styling Framework  |
 | Vercel          | Hosting & Deployment              |
 | FakeStore API   | Product Data                      |
+| Sweet Alert 2   | Alert and Design                      |
+
 
 ---
 
