@@ -3,6 +3,8 @@ import { IProduct } from '../../shared/iproduct';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductService } from '../../core/services/Product/product-service';
 import { CommonModule } from '@angular/common';
+import { IcartItem } from '../../shared/icart-item';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-product-details',
@@ -31,4 +33,36 @@ export class ProductDetails {
       },
     });
   }
+
+
+    addToCart(product: IProduct) {
+      const cart: IcartItem[] = JSON.parse(localStorage.getItem('cart') || '[]');
+  
+      const existingItem = cart.find((item) => item.id === product.id);
+  
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          image: product.image,
+          quantity: 1,
+        });
+      }
+  
+      localStorage.setItem('cart', JSON.stringify(cart));
+  
+      // SweetAlert notification
+      Swal.fire({
+        icon: 'success',
+        title: 'Added to Cart 🛒',
+        text: `${product.title.split(' ')[0]} has been added to your cart!`,
+        showConfirmButton: false,
+        timer: 1500,
+        toast: true,
+        position: 'top-end',
+      });
+    }
 }

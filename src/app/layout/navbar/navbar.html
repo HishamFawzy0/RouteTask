@@ -51,7 +51,7 @@
         <div class="hidden w-full md:flex md:items-center md:w-auto" id="navbar-menu">
             <ul class="flex flex-col md:flex-row items-center gap-2 md:gap-4 mt-4 md:mt-0">
 
-                <!-- Home Link -->
+                <!-- Home Link --> 
                 <li>
                     <a routerLink="/home"
                         routerLinkActive="bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg scale-105"
@@ -63,6 +63,21 @@
                             </path>
                         </svg>
                         <span>Home</span>
+                        <!-- Active indicator -->
+                        <div
+                            class="absolute -bottom-1 left-1/2  transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/cart" routerLinkActive="bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg scale-105"
+                        class="group relative px-6 py-3 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 font-semibold rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center space-x-2">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.5 5M10 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z" />
+                        </svg>
+                        <span>Cart</span>
                         <!-- Active indicator -->
                         <div
                             class="absolute -bottom-1 left-1/2  transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300">
